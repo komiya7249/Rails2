@@ -1,0 +1,26 @@
+<div class="sarch_box">検索窓</div>
+<div class="detail_box">
+    <div class="link_box">
+    <%= link_to"←戻る"%>
+    <%= link_to"編集"%>
+  </div>
+  <div>
+    <% if @room.img? %>
+    <%= image_tag @room.img.thumb.url%>
+    <% else %>
+    <%= image_tag("default-image.png")%>
+    <% end %>
+    <div>
+      <p><%= @room.name %><span><%= @room.price %></span></p>
+    </div>
+      <p><%= @room.introduction%></p>
+    <div>
+      <%= form_with model: @room do |f| %>
+        <%= f.label"チェックイン" %>
+        <%= f.label"チェックアウト" %>
+        <%= f.label"人数" %>
+        <%= f.submit"予約する", class:"edit_submit"%>
+      <% end %>
+    </div>
+  </div>
+</div>
