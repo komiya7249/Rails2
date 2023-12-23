@@ -1,0 +1,35 @@
+<div class="own_body">
+  <div class="own_box">
+    <h2 class="own_title">登録済み一覧</h2>
+      <table class="own_table">
+        <thead>
+          <tr>
+            <th class="own_thead">画像</th>
+            <th class="own_thead">施設名</th>
+            <th class="own_thead">紹介文</th>
+            <th class="own_thead">料金</th>
+            <th class="own_thead">作成日</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @rooms.each do |post|%>
+            <tr>
+              <th class="own_th">
+                <% if @user.img? %>
+                <%= image_tag @user.img.thumb.url, class:"size100✖️100"%>
+                <% else %>
+                <%= image_tag "default-image.png", class:"hotel_img"%>
+                <% end %>
+              </th>
+              <th class="own_th"><%= post.name%></th>
+              <th class="own_th"><%= post.introduction%></th>
+              <th class="own_th"><%= post.user_id%></th>
+              <th class="own_th"><%= post.created_at%></th>
+              <th><%= link_to"●",[:edit,post] %></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+</div>
