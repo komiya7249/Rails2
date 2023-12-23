@@ -1,6 +1,7 @@
 <div class="room_new_body">
   <div class="new_form">
     <h2 class="room_new_title">新規登録</h2>
+    <%= render"shared/error", obj:@room, class:"error_messege"%>
     <%= form_with model: @room do |f| %>
         <table class="new_table">
           <tr>

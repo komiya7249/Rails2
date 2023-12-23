@@ -1,0 +1,499 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+.header_bar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: steelblue;
+}
+
+
+.header_title{
+  font-size: 30px;
+  padding: 20px 0;
+}
+
+.rounded-circle{
+  border-radius: 100%;
+}
+
+.size50✖️50{
+  width: 50px;
+  height: 50px;
+}
+
+.size100✖️100{
+  width: 100px;
+  height: 100px;
+}
+
+.hotel_img{
+  height: 100%;
+
+}
+
+.headder_name{
+  height: 50px;
+  line-height: 50px;
+  margin-left: 10px;
+  font-size: 20px;
+}
+
+.headder_menu{
+  display: flex;
+}
+
+.required{
+  color: red;
+}
+
+.error_messege{
+  color: red;
+}
+
+/*-------------index.html.erb-------------*/
+
+.index_backimg{
+  background-image: url("/images/index_img.jpg");
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+}
+
+.index_title{
+  color: aliceblue;
+  font-size: 45px;
+  margin-top: auto;
+  margin-left: auto;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.index_item_box{
+  max-width: 1480px;
+  width: 100%;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index_item_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.index_search_area{
+  width: 100%;
+  max-width: 740px;
+  color: aliceblue;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.index_search_box{
+  width: 740px;
+  background-color: rgb(255,255,255, 0.5);
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0;
+}
+
+.index_search_text{
+  font-size: 25px;
+  color: black;
+  margin-left: 40px;
+  font-weight: bold;
+}
+
+.index_search_field{
+  width: 90%;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.index_submit{
+  margin-top: 20px;
+  width: 90%;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 20px;
+  background: linear-gradient(steelblue,rgb(44, 118, 192),rgb(131, 168, 234));
+  border: 1px solid rgb(111, 133, 160);
+  color: aliceblue;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.index_image{
+  width: 340px;
+  border-radius: 10px;
+  margin-left: 20px;
+}
+
+.index_subtitle{
+  font-size: 30px;
+  line-height: 70px;
+  margin: 40px 0;
+  border-bottom: 3px solid steelblue;
+  border-spacing: 5px;
+}
+
+.image_title{
+  margin-left: 20px;
+}
+
+
+/*-------------new.html.erb-------------*/
+
+.new_box,.login_page{
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 80px;
+}
+
+.new_form{
+  max-width: 740px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+}
+
+.new_title, .login_title{
+  font-size: 30px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 200;
+}
+
+.new_field, .login_field{
+  width: 100%;
+  height: 50px;
+  margin-bottom: 30px;
+  border: 1px solid lightslategray;
+  border-radius: 5px;
+}
+
+.field{
+  max-width: 600px;
+}
+
+.new_submit,.login_submit, .edit_submit{
+  height: 60px;
+  width: 100%;
+  background-color: skyblue;
+  border: none;
+  border-radius: 10px;
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+
+.actions{
+  max-width: 600px;
+}
+
+.new_submit:hover,.login_submit:hover, .edit_submit:hover{
+  background-color: white;
+  color: skyblue;
+  transition: 0.4s;
+}
+
+.login_btn, .new_btn, .edit_cansel_btn{
+  height: 60px;
+  width: 100%;
+  border: 1px solid lightslategray;
+  border-radius: 10px;
+  font-size: 20px;
+  background-color: white;
+  color: lightslategray;
+  text-decoration: none;
+  text-align: center;
+  line-height: 60px;
+  display: block;
+}
+
+.login_btn:hover, .new_btn:hover, .edit_cansel_btn:hover{
+  background-color: lightslategray;
+  color: white;
+  transition: 0.4s;
+}
+
+.new_form > p{
+  font-weight: bold;
+}
+
+.new_form > p > span{
+  color: red;
+}
+
+
+/*------------------------------profile.html.erb------------------------------*/
+
+.profile_body{
+  width: 100%;
+  padding: 40px,80px;
+}
+
+.profile_container{
+  margin-top: 20px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile_title{
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.choice_box{
+  width: 25%;
+  margin-right: 20px;
+  list-style-type: none
+}
+
+.edit_box{
+  width:70%;
+  position: relative;
+}
+
+.edit_bar{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid lightslategray;
+}
+
+.edit_link{
+  font-size: 20px;
+}
+
+.edit_bar:first-child{
+  font-size: 30px;
+}
+
+.choice_box > li{
+  font-size: 20px;
+  border: 1px solid lightslategray;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.edit_box > table{
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.th_title{
+  text-align: start;
+  line-height: 2;
+  font-size: 20px;
+}
+
+.login_page{
+  width: 100%;
+  background-color: whitesmoke;
+  padding: 80px;
+}
+
+.login_box{
+  max-width: 740px;
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 60px;
+}
+
+.login_box > p{
+  align-items: center;
+}
+
+.setting_table{
+  border-spacing: 30px;
+}
+
+/*------------------------------login/html.erb------------------------------*/
+
+.dropdown_list{
+  list-style: none;
+}
+
+/*------------------------------profile_edit.html.erb------------------------------*/
+
+.profile_edit_box{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.edit_area{
+  width: 100%;
+  height: 100px;
+}
+
+.edit_table{
+  width: 100%;
+  border-spacing: 30px;
+}
+
+.edit_btn_box{
+  margin-top:40px;
+  width: 40%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.edit_field{
+  width: 100%;
+  height: 40px;
+}
+
+/*------------------------------Room/new.html.erb------------------------------*/
+
+
+.room_new_bodey{
+  width: 100%;
+}
+
+.room_new_box{
+  max-width: 740px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+
+.new_th{
+  width: 40%;
+  font-size: 18px;
+  display: flex;
+}
+
+.new_td{
+  width: 65%;
+}
+
+.new_table{
+  width: 100%;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.room_new_title{
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.new_area{
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+/*------------------------------own.html.erb------------------------------*/
+
+.own_title, .reserve_index_title{
+  font-size: 25px;
+  margin-top: 40px;
+}
+
+.own_title > tr{
+  height: 20px;
+}
+
+.own_body, .index_body{
+  width: 100%;
+}
+
+.own_box, .index_box{
+  max-width: 1480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.own_th, .index_th{
+  margin-right: 40px;
+  font-size: 18px;
+  border-bottom: 1px solid gainsboro;
+  height: 100px;
+}
+
+.own_table, .index_table{
+  margin-top: 40px;
+  width: 100%;
+  border-spacing: 0;
+}
+
+.own_thead, .index_thead{
+  border-bottom: 2px solid gainsboro;
+  font-size: 18px;
+  height: 40px;
+}
+
+/*------------------------------room/show.html.erb------------------------------*/
+
+.detail_body{
+  width: 100%;
+}
+
+.detail_box{
+  max-width: 1400px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.detail_info_box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail_info_container{
+  width: 40%;
+}
+
+.show_form_box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.reserve_box{
+  width: 100%;
+}
+
+.link_box{
+  display: flex;
+  justify-content: space-between;
+}
+/*------------------------------resevertions/confirm.html.erb------------------------------*/

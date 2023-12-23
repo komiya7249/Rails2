@@ -1,7 +1,17 @@
 <ul class="dropdown_list" id="dropdownlist">
-  <li class="dropdown_list"><%= link_to"施設の新規登録"%></li>
-  <li class="dropdown_list"><%= link_to"予約済み一覧"%></li>
-  <li class="dropdown_list"><%= link_to"登録済み一覧"%></li>
+  <li>
+    <div class="headder_menu">
+    <% if @user.img? %>
+    <%= image_tag @user.img.thumb.url, class:"rounded-circle size50✖️50"%>
+    <% else %>
+    <%= image_tag "default-avatar.png",class:"size50✖️50" %>
+    <% end %>
+    <p class="headder_name"><%= @user.name%></p>
+    </div>
+    </li>
+  <li class="dropdown_list"><%= link_to"施設の新規登録",new_room_path%></li>
+  <li class="dropdown_list"><%= link_to"予約済み一覧", reservations_path%></li>
+  <li class="dropdown_list"><%= link_to"登録済み一覧", own_path%></li>
   <li class="dropdown_list"><%= link_to"アカウント設定",account_path%></li>
   <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
 </ul>

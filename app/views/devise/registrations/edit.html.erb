@@ -1,0 +1,62 @@
+
+<div class="profile_body">
+  <div class="profile_title">
+    <h1>設定</h1>
+  </div>
+  <div class="profile_container">
+      <ul class="choice_box">
+        <li><%= link_to"アカウント",account_path%></li>
+        <li><%= link_to"プロフィール",profile_path%></li>
+      </ul>
+      <div class="edit_box">
+        <div class="edit_bar">
+          <p>プロフィール</p>
+          <p class="edit_link"><%=link_to"編集"%></p>
+        </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <table class="edit_table">
+              <%= render "devise/shared/error_messages", resource: resource %>
+
+              <tr>
+              <th class="th_title"><%= f.label :email %></th>
+              <td><%= f.email_field :email, autofocus: true, autocomplete: "email",class:"edit_field" %><td>
+              </tr>
+        
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <tr>
+              <th class="th_title">
+              <%= f.label :password %> <i>(変更する場合のみ入力してください)</i></th>
+              <td><%= f.password_field :password, autocomplete: "new-password" ,class:"edit_field"%></td>
+              <% if @minimum_password_length %>
+                <br />
+                <em><%= @minimum_password_length %> characters minimum</em>
+              <% end %>
+              </tr>
+            
+              <tr>
+              <th  class="th_title">
+              <%= f.label :password_confirmation %><i>(変更する場合のみ入力してください)</i></th>
+              <td><%= f.password_field :password_confirmation, autocomplete: "new-password",class:"edit_field" %></td>
+              </div>
+              </td>
+          
+              <tr>
+              <th  class="th_title">
+              <%= f.label :current_password %></th>
+              <td><%= f.password_field :current_password, autocomplete: "current-password",class:"edit_field" %></td>
+              </tr>
+            </table>
+            <div class="edit_btn_box">
+            <%= f.submit"保存",class:"edit_submit"%>
+            <%= link_to"キャンセル",account_path,class:"edit_cansel_btn"%>
+          <% end %>
+
+        </div>
+
+    </div>
+  </div>
+
+</div>
