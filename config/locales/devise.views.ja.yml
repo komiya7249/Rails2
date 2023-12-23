@@ -1,0 +1,16 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: "ユーザーネーム"
+        current_password: "現在のパスワード"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+    models:
+      user: "ユーザ"
+  devise:
+    confirmations:
+      new:
+
+
