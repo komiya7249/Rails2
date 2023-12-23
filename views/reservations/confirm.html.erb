@@ -1,0 +1,38 @@
+<div class="">
+  <h2>予約内容の確認</h2>
+  <table>
+    <tr>
+      <th>チェックイン</th>
+      <td><%= l @reservation.check_in_at, format: :short %></td>
+    </tr>
+    <tr>
+      <th>チェックアウト</th>
+      <td><%= l @reservation.check_out_at, format: :short %></td>
+    </tr>
+    <tr>
+      <th>日数</th>
+      <td><%= @reservation.days%></td>
+    </tr>
+    <tr>
+      <th>人数</th>
+      <td><%= @reservation.persons%></td>
+    </tr>
+    <tr>
+      <th>お支払い金額</th>
+      <td><%= @reservation.total_price %><span>（お一人様あたり/<%=@room.price%>)</span></td>
+    </tr>
+  </table>
+</div>
+
+
+<%= form_with model: @reservation, local: true, method: :post do |f|%>
+  <%= f.hidden_field :check_in_at %>
+  <%= f.hidden_field :check_out_at %>
+  <%= f.hidden_field :days %>
+  <%= f.hidden_field :persons%>
+  <%= f.hidden_field :total_price %>
+  <%= f.hidden_field :user_id%>
+  <%= f.hidden_field :room_id%>
+  <%= f.submit "予約を完了する"%>
+<% end %>
+<%= link_to"キャンセル", :back %>
