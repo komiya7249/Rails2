@@ -13,7 +13,6 @@
           <th class="index_thead">チェックイン</th>
           <th class="index_thead">チェックアウト</th>
           <th class="index_thead">予約確定日時</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -27,13 +26,12 @@
               <%= image_tag "default-image.png", class:"hotel_img"%>
               <% end %>
             </th>
-            <th class="index_th"><%= link_to"#{@room.name}",post %></th>
+            <th class="index_th"><%= link_to"#{@room.name}",room_path(@room.id) %></th>
             <th class="index_th"><%= @room.introduction %></th>
             <th class="index_th">¥<%= post.total_price %></th>
             <th class="index_th"><%= l post.check_in_at, format: :short %></th>
             <th class="index_th"><%= l post.check_out_at, format: :short %></th>
             <th class="index_th"><%= l post.created_at %></th>
-            <th><%= link_to"●",[:edit,post] %></th>
           </tr>
         <% end %>
       </tbody>

@@ -6,7 +6,7 @@
   <h2 class="index_title">Potepan Shareで<br>まだ体験したことのない旅をしよう</h2>
     <%= search_form_for @q, url:result_path, class:"index_search_box" do |f|%>
         <%= f.label"施設名・キーワードから探す", class:"index_search_text"%><br>
-        <%= f.search_field :name_or_introduction_cont, placeholder:"施設名・キーワードを入力", class:"index_search_field"%>
+        <%= f.search_field :name_or_introduction_or_address_cont, placeholder:"施設名・キーワードを入力", class:"index_search_field"%>
         <%= f.submit class:"index_submit" %>
     <% end %>
   </div>
@@ -19,20 +19,20 @@
   <h3 class="index_subtitle">エリアから探す</h3>
   <div class="index_item_container">
     <div>
-      <p class="image_title">東京</p>
-      <%= link_to image_tag("tohyo_image.jpg", class:"index_image"), result_path(q:{name_cont:"東京"})%>
+      <p class="image_title">東京都</p>
+      <%= link_to image_tag("tohyo_image.jpg", class:"index_image"), result_path(q:{address_cont:"東京都"})%>
     </div>
     <div>
-      <p class="image_title">大阪</p>
-      <%= link_to image_tag("osaka_image.jpg", class:"index_image"), result_path(q:{name_cont:"大阪"})%>
+      <p class="image_title">大阪府</p>
+      <%= link_to image_tag("osaka_image.jpg", class:"index_image"), result_path(q:{address_cont:"大阪府"})%>
     </div>
     <div>
-      <p class="image_title">京都</p>
-      <%= link_to image_tag("kyoto_image.jpg", class:"index_image"), result_path(q:{name_cont:"京都"})%>
+      <p class="image_title">京都府</p>
+      <%= link_to image_tag("kyoto_image.jpg", class:"index_image"), result_path(q:{address_cont:"京都府"})%>
     </div>
     <div>
-      <p class="image_title">札幌</p>
-      <%= link_to image_tag("sapporo_image.jpg", class:"index_image"), result_path(q:{name_cont:"北海道"})%>
+      <p class="image_title">札幌市</p>
+      <%= link_to image_tag("sapporo_image.jpg", class:"index_image"), result_path(q:{address_cont:"札幌市"})%>
     </div>
   </div>
 

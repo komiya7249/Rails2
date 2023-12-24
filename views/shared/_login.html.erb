@@ -1,14 +1,19 @@
-<ul class="dropdown_list" id="dropdownlist">
-  <li>
-    <div class="headder_menu">
-    <% if @user.img? %>
-    <%= image_tag @user.img.thumb.url, class:"rounded-circle size50✖️50"%>
-    <% else %>
-    <%= image_tag "default-avatar.png",class:"size50✖️50" %>
-    <% end %>
-    <p class="headder_name"><%= @user.name%></p>
-    </div>
-    </li>
+
+<header class="header_bar">
+  <div class="header_box">
+    <h1><%= link_to"Potepan Share",users_path%></h1>
+      <label for="toggle" onclick="" for="menuToggle" class="headder_menu">
+        <% if @user.img? %>
+        <%= image_tag @user.img.thumb.url, class:"rounded-circle size50✖️50"%>
+        <% else %>
+        <%= image_tag "default-avatar.png",class:"size50✖️50" %>
+        <% end %>
+        <p class="headder_name"><%= @user.name%></p>
+      </label>
+  </div>
+</header>
+<input type="checkbox" id="toggle" autocomplete="off">
+<ul class="dropdown_list" id="menu">
   <li class="dropdown_list"><%= link_to"施設の新規登録",new_room_path%></li>
   <li class="dropdown_list"><%= link_to"予約済み一覧", reservations_path%></li>
   <li class="dropdown_list"><%= link_to"登録済み一覧", own_path%></li>
