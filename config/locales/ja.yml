@@ -7,16 +7,16 @@ ja:
       models:
         user: 'アカウント情報'
       attributes:
-        user:
-          name: 'ユーザーネーム'
-          email: 'メールアドレス'
-          password: 'パスワード'
-          password_confirmation: '確認用パスワード'
         room:
           name: '施設名'
           introduction: '施設詳細'
           price: '料金'
           address: '住所'
+        user:
+          name: 'ユーザーネーム'
+          email: 'メールアドレス'
+          password: 'パスワード'
+          password_confirmation: '確認用パスワード'
 
     errors:
       messages:

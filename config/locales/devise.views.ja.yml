@@ -7,10 +7,20 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
+      room:
+        name: "施設名"
+        introduction: "施設詳細"
+        price: "料金"
+        address: "住所"
+      reservation:
+        check_out_at: "チェックアウト日"
+        check_in_at: "チェックイン日"
+        persons: "人数"
     models:
-      user: "ユーザ"
+      user: "ユーザー情報"
   devise:
     confirmations:
       new:
+
 
 

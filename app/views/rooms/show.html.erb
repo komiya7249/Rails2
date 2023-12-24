@@ -2,40 +2,42 @@
 
   <div class="detail_box">
     <div class="link_box">
-      <%= link_to"←戻る",:back%>
-      <%= link_to"編集", edit_room_path%>
+      <%= link_to"←戻る",:back,class:"link_text"%>
+      <%= link_to"編集", edit_room_path(@room.id),class:"link_text"%>
     </div>
     <div class="detail_info_box">
       <% if @room.img? %>
-      <%= image_tag @room.img.thumb.url%>
+      <%= image_tag @room.img.thumb.url,class:"detail_img_container"%>
       <% else %>
-      <%= image_tag("default-image.png")%>
+      <%= image_tag("default-image.png",class:"detail_img_container")%>
       <% end %>
       <div class="detail_info_container">
-        <p><%= @room.name %></p>
-        <p><%= @room.introduction%></p>
-        <p><%= @room.price %></p>
+        <p class="info_name"><%= @room.name %></p>
+        <p class="info_price">1泊 1名あたり/<span class="room_price">¥<%= @room.price %></span>〜</p>
+        <p class="info_introduction"><%= @room.introduction%></p>
       </div>
     </div>
 
     <div class="reserve_box">
-      <%= form_with model: @reservation ,url:confirm_reservations_path(@reservation), method: :post do |f| %>
+      <%= form_with model: @reservation, local:true, url:confirm_reservations_path(@reservation), method: :post do |f| %>
+          <%= render"shared/error", obj:@reservation, class:"error_messege"%>
         <div class="show_form_box">
-          <div>
+          <div class="show_field">
             <%= f.label"チェックイン" %><br>
-            <%= f.date_field :check_in_at%>
+            <%= f.date_field :check_in_at, class:"show_field"%>
           </div>
-          <div>
+          <div class="show_field">
             <%= f.label"チェックアウト" %><br>
-            <%= f.date_field :check_out_at%>
+            <%= f.date_field :check_out_at, class:"show_field" %>
           </div>
-          <div>
+          <div class="show_field">
             <%= f.label"人数"%><br>
-            <%= f.text_field :persons,placeholder:'人数'%>
+            <%= f.text_field :persons,placeholder:'人数', class:"show_field"%>
           </div>
         </div>
         <%= f.hidden_field :room_id, value: @room.id%>
         <%= f.hidden_field :user_id, value: @user.id%>
+        <%= f.hidden_field :total_price %>
         <%= f.submit"予約する",class:"edit_submit"%>
       <% end %>
     </div>

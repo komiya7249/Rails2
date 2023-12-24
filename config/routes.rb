@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'reservation/index'
   devise_for :users, controllers: {
     registrations: "logs/registrations"
   }
+  get 'reservation/index'
   get 'rooms/index'
 
   post 'users/new'
@@ -26,4 +26,5 @@ Rails.application.routes.draw do
   get '/own', to:'rooms#own'
   get '/result', to:'rooms#result'
   patch '/account', to:'users#account'
+  patch '/reservations', to:'reservations#index'
 end
