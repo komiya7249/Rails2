@@ -11,7 +11,6 @@
       <div class="edit_box">
         <div class="edit_bar">
           <p>プロフィール</p>
-          <p class="edit_link"><%=link_to"編集"%></p>
         </div>
           <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
             <table class="edit_table">
