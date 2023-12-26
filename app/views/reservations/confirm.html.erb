@@ -1,0 +1,40 @@
+
+<div class="confirm_box">
+  <h2 class="confirm_title">予約内容の確認</h2>
+  <table class="confirm_table">
+    <tr class="confirm_tr">
+      <th>チェックイン</th>
+      <td><%= l @reservation.check_in_at, format: :short %></td>
+    </tr>
+    <tr class="confirm_tr">
+      <th>チェックアウト</th>
+      <td><%= l @reservation.check_out_at, format: :short %></td>
+    </tr>
+    <tr class="confirm_tr">
+      <th>日数</th>
+      <td><%= @reservation.days%></td>
+    </tr>
+    <tr class="confirm_tr">
+      <th>人数</th>
+      <td><%= @reservation.persons%></td>
+    </tr>
+    <tr class="confirm_tr">
+      <th>総支払額</th>
+      <td>¥<%= @reservation.total_price %><span>（お一人様一泊あたり/<%=@room.price%>)</span></td>
+    </tr>
+  </table>
+
+
+
+<%= form_with model: @reservation, url:reservations_path, local: true do |f|%>
+  <%= f.hidden_field :check_in_at %>
+  <%= f.hidden_field :check_out_at %>
+  <%= f.hidden_field :days %>
+  <%= f.hidden_field :persons%>
+  <%= f.hidden_field :total_price %>
+  <%= f.hidden_field :user_id%>
+  <%= f.hidden_field :room_id%>
+  <%= f.submit"予約を完了する", class:"confirm_submit" %>
+<% end %>
+<%= link_to"キャンセル", room_path(@room), class:"confirm_btn" %>
+</div>

@@ -1,0 +1,37 @@
+<div class="room_new_body">
+  <div class="new_form">
+    <h2 class="room_new_title">新規登録</h2>
+    <%= render"shared/error", obj:@room, class:"error_messege"%>
+    <%= form_with model: @room do |f| %>
+        <table class="new_table">
+          <tr>
+            <th class="new_th"><%= f.label:name, "施設名"%><span class="required">*</span></th>
+            <td class="new_td"><%= f.text_field:name,class:"new_field", placeholder:"ルーム名を入力"%></td>
+          </tr>
+          <tr>
+            <th class="new_th"><%= f.label:introduction, "施設詳細"%><span class="required">*</span></th>
+            <td class="new_td"><%= f.text_area:introduction,class:"new_area", placeholder:"施設詳細を入力"%></td>
+          </tr>
+          <tr>
+            <th class="new_th"><%= f.label:price, "料金"%><span class="required">*</span></th>
+            <td class="new_td"><%= f.text_field:price,class:"new_field", placeholder:"一日あたりの料金を入力"%></td>
+          </tr>
+          <tr>
+            <th class="new_th"><%= f.label:address, "住所"%><span class="required">*</span></th>
+            <td class="new_td"><%= f.text_field:address, class:"new_field", placeholder:"住所を入力" %></td>
+          </tr>
+          <tr>
+            <th class="new_th"><%= f.label:img, "施設画像"%></th>
+            <td class="new_td">
+              <%= f.file_field :img %>
+            </td>
+          </tr>
+        </table>
+          <%= f.hidden_field :user_id,value:current_user.id%>
+        <div class="actions">
+        <%= f.submit "保存", class:"new_submit"%>
+        <%= link_to"キャンセル",users_path, class:"edit_cansel_btn"%>
+        </div>
+    <% end %>
+  </div>
+</div>

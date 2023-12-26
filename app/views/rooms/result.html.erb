@@ -1,0 +1,12 @@
+
+
+<div class="result_body">
+<p class="result_text"><%=@rooms.size%>件が見つかりました。</p>
+  <ul class="result_box">
+  <% if user_signed_in? %>
+  <%= render "shared/login_result"%>
+  <% else %>
+  <%= render "shared/not_login_result"%>
+  <% end %>
+  </ul>
+</div>

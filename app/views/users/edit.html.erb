@@ -1,0 +1,47 @@
+
+<div class="profile_body">
+  <div class="profile_title">
+  <h1>設定</h1>
+  </div>
+  <div class="profile_container">
+      <ul class="choice_box">
+        <li><%= link_to"アカウント",account_path%></li>
+        <li><%=link_to"プロフィール",profile_path%></li>
+      </ul>
+      <div class="edit_box">
+        <div class="edit_bar">
+          <p>プロフィール</p>
+        </div>
+        <%= form_with model: @user do |f|%>
+          <table class="edit_table">
+          <%= render "shared/error", obj: @user %>
+            <tr>
+              <th class="th_title"><%=f.label:"アイコン画像"%></th>
+              <td>
+                  <% if @user.img?%>
+                  <%= image_tag @user.img.thumb.url, class:"rounded-circle size100✖️100" %>
+                  <% else %>
+                  <%= image_tag("default-avatar.png")%>
+                  <% end %>
+                  <%= f.file_field :img %>
+              </td>
+            </tr>
+            <tr>
+              <th class="th_title"><%= f.label :name,"名前"%></th>
+              <td><%= f.text_field :name,class:"edit_field" %></td>
+            </tr>
+            <tr>
+              <th class="th_title"><%= f.label :introduction ,"自己紹介" %></th>
+              <td><%= f.text_area :introduction,class:"edit_area" %></td>
+            </tr>
+          </table>
+          <div class="edit_btn_box">
+            <%= f.submit"保存",class:"edit_submit"%>
+            <%= link_to"キャンセル",profile_path,class:"edit_cansel_btn"%>
+          </div>
+          <% end %>
+        </table>
+    </div>
+  </div>
+
+<div>

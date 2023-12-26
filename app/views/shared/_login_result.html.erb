@@ -1,0 +1,19 @@
+
+<% @rooms.each do |room|%>
+  <li class="result_container">
+    <div class="result_img_container">
+      <% if room.img? %>
+      <%= image_tag room.img.thumb.url, class:"result_img"%>
+      <% else %>
+      <%= image_tag "default-image.png", class:"result_img"%>
+      <% end %>
+    </div>
+    <div class="result_info">
+      <p class="result_name"><%= room.name %></p>
+      <p><%= room.address%></p>
+      <p><%= room.introduction %></p>
+      <p class="result_price_all">1名 1泊あたり/<span class="result_price">¥<%= room.price %>〜</span></p>
+    </div>
+    <%= link_to"詳細はこちら", room, class:"result_detail_btn"%>
+  </li>
+  <% end %>
